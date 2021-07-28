@@ -41,9 +41,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-// import Contact from './components/Contact';
+import Contact from './components/Contact';
 import About from './components/About';
 import Home from './components/Home';
+import Projects from './components/Work';
 import NavigationBar from './components/NavigationBar';
 import 'react-bootstrap/dist/react-bootstrap.min.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -53,11 +54,21 @@ function App() {
     <div className="App">
       <Router>
         <NavigationBar></NavigationBar>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/about" component={About}></Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/work">
+          <Projects />
+        </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
         {/* <Route exact path="/contact" component={Contact}></Route> */}
       </Router>
-    </div>
+    </div >
   );
 }
 
